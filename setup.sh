@@ -97,4 +97,7 @@ git clone --branch main --single-branch https://github.com/SatoHiroto526/DataPip
 mv temp_repo/* temp_repo/.[!.]* .
 rm -rf temp_repo
 
+#プログラム権限変更
+chmod 777 /home/ec2-user/etl/script/ec2tos3/*
+
 echo "=====ETLサーバーのセットアップが完了しました。====="

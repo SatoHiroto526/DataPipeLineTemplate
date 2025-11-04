@@ -71,12 +71,12 @@ function checkFile () {
     if [ "$1" -eq "${FLAG}" ]; then 
         # 監視対象サーバーがETL処理を兼ねる場合
         [ -f "$2" ]
-        return "$?"
+        return $?
     else
         # 監視対象サーバーとETL処理分ける場合
         # "[ -f \"$2\" ]":外側はダブルクオート、内側はシングルクオート(エスケープ)
         ssh -i "$3" -o StrictHostKeyChecking=no "$4@$5" "[ -f \"$2\" ]"
-        return "$?"
+        return $?
     fi
 }
 
