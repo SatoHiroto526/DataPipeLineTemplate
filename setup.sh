@@ -60,15 +60,6 @@ else
     echo "/home/ec2-user/etlディレクトリの作成が完了しました。"
 fi
 
-#/home/ec2-user/etl/scriptディレクトリ作成
-if [ -d "/home/ec2-user/etl/script" ]; then
-    echo "/home/ec2-user/etl/scriptが存在するため作成をスキップします。";
-else
-    cd  /home/ec2-user/etl
-    mkdir script
-    echo "/home/ec2-user/etl/scriptディレクトリの作成が完了しました。"
-fi
-
 #/home/ec2-user/etl/logディレクトリ作成
 if [ -d "/home/ec2-user/etl/log" ]; then
     echo "/home/ec2-user/etl/logが存在するため作成をスキップします。";
@@ -100,7 +91,10 @@ fi
 sudo dnf update -y
 sudo dnf install -y git
 
-#プログラムをFgit clone
-git clone --branch main --single-branch https://github.com/SatoHiroto526/DataPipeLineTemplate.git
+#プログラムをgit clone
+cd /home/ec2-user/etl/
+git clone --branch main --single-branch https://github.com/SatoHiroto526/DataPipeLineTemplate.git temp_repo
+mv temp_repo/* temp_repo/.[!.]* .
+rm -rf temp_repo
 
 echo "=====ETLサーバーのセットアップが完了しました。====="
