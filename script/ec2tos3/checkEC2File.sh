@@ -49,7 +49,7 @@ USERNAME="${username//$'\r'/}"
 # ファイル受領サーバーのログイン用秘密鍵
 PEMKEY="${pemkey//$'\r'/}"
 
-echo "===== $(date '+%Y-%m-%d %H:%M:%S') : EC2ファイル監視ジョブを開始します。 ===== "
+echo "===== $(date '+%Y-%m-%d %H:%M:%S') : EC2ファイル監視ジョブを開始します。 ===== " >&1
 echo "-I:処理対象ファイル:${FILE_PATH}" >&1
 if [ "${TRANSFER_IS_ETL_FLAG}" -eq "${FLAG}" ]; then
     # 監視対象サーバーがETL処理を兼ねる場合

@@ -54,7 +54,7 @@ S3_BUCKET="${s3bucket//$'\r'/}"
 S3_PREFIX="${s3preffix//$'\r'/}"
 S3_SUFFIX="${s3suffix//$'\r'/}"
 
-echo "===== $(date '+%Y-%m-%d %H:%M:%S') : EC2→S3ファイル転送ジョブを開始します。 ===== "
+echo "===== $(date '+%Y-%m-%d %H:%M:%S') : EC2→S3ファイル転送ジョブを開始します。 ===== " >&1
 echo "-I:処理対象ファイル:${FILE_PATH}" >&1
 if [ "${TRANSFER_IS_ETL_FLAG}" -eq "${FLAG}" ]; then
     # 監視対象サーバーがETL処理を兼ねる場合
@@ -148,7 +148,7 @@ if [ "${TRANSFER_FILE_RESULT}" -eq 0 ] && [ "${TRANSFER_METADATA_RESULT}" -eq 0 
 else
     # ファイル転送、メタデータ転送どちらか／ともに異常終了
     echo "-I:ファイル転送ステータスコード=${TRANSFER_FILE_RESULT}, メタデータ転送ステータスコード=${TRANSFER_METADATA_RESULT}" >&1
-    echo "-I:S3への転送が失敗しました。" >&1
+    echo "-E:S3への転送が失敗しました。" >&1
     echo "===== $(date '+%Y-%m-%d %H:%M:%S') : EC2→S3ファイル転送ジョブを異常終了します。 ===== " >&1
     exit 1
 fi

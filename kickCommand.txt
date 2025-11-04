@@ -6,3 +6,6 @@
 
 # deleteEC2File.sh（EC2ファイル削除ジョブ）
 /home/ec2-user/etl/script/ec2tos3/deleteEC2File.sh /home/ec2-user/etl/log/script.log /home/ec2-user/etl/log/error.log /home/ec2-user/etl/resources/ec2tos3.properties
+
+# kickGlueCrawler.sh（Glueクローラー起動ジョブ）
+/home/ec2-user/etl/script/kickGlueCrawler/kickGlueCrawler.sh /home/ec2-user/etl/log/script.log /home/ec2-user/etl/log/error.log /home/ec2-user/etl/resources/kickGlueCrawler.properties
