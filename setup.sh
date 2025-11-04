@@ -99,5 +99,6 @@ rm -rf temp_repo
 
 #プログラム権限変更
 chmod 777 /home/ec2-user/etl/script/ec2tos3/*
+chmod 777 /home/ec2-user/etl/script/kickGlueCrawler/*
 
 echo "=====ETLサーバーのセットアップが完了しました。====="
