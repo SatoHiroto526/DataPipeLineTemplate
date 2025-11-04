@@ -1,0 +1,5 @@
+# checkEC2File.sh（EC2ファイル監視ジョブ）
+/home/ec2-user/etl/script/ec2tos3/checkEC2File.sh /home/ec2-user/etl/log/script.log /home/ec2-user/etl/log/error.log /home/ec2-user/etl/resources/ec2tos3.properties 1 100
+
+# EC2toS3.sh（EC2⇒S3ファイル転送ジョブ）
+/home/ec2-user/etl/script/ec2tos3/EC2toS3.sh /home/ec2-user/etl/log/script.log /home/ec2-user/etl/log/error.log /home/ec2-user/etl/resources/ec2tos3.properties
